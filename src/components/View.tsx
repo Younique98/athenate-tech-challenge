@@ -1,26 +1,46 @@
-import { IProject } from "@/hooks/useProject"
+import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
-type TProps = {
-    project: IProject
-    onEdit: () => void
+interface IProfile {
+    id: number
+    name: string
+    location: string
+    image_url: string
+    headline: string
+    bio: string
 }
 
-// TODO: (ET) Edit project type and interface to match what is needed.
-export const View = ({ project, onEdit }: TProps) => {
-  return (
-    <div className="space-y-4">
-      <h2 className="text-xl font-bold">About Me</h2>
-      <div><strong>Name:</strong> {project.name}</div>
-      <div><strong>Location:</strong> {project.location}</div>
-      <div><strong>Headline:</strong> {project.headline}</div>
-      <div><strong>Content:</strong> {project.content}</div>
+export const View = () => {
+    const [data, setData] = useState<IProfile | null>(null)
 
-      <button
-        className="mt-4 px-4 py-2 bg-blue-600 text-white rounded"
-        onClick={onEdit}
-      >
-        Edit Project
-      </button>
-    </div>
-  )
+    useEffect(() => {
+        fetch('/api/profile')
+            .then((res) => res.json())
+            .then(setData)
+    }, [])
+
+    if (!data) return <div className="text-center mt-10">Loading...</div>
+
+    return (
+        <div className="max-w-xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md border text-gray-800">
+            <div className="flex flex-col items-center">
+                <Image
+                    src={data.image_url}
+                    alt="Profile"
+                    width={200}
+                    height={300}
+                    className="w-28 h-28 rounded-full object-cover mb-4"
+                />
+                <h1 className="text-2xl font-semibold mb-1">{data.name}</h1>
+                <p className="text-sm text-gray-500 mb-2">{data.location}</p>
+                <p className="italic text-blue-600 mb-4">{data.headline}</p>
+            </div>
+            <div className="mt-4">
+                <h2 className="text-lg font-medium mb-2">About Me</h2>
+                <p className="whitespace-pre-line border border-gray-200 bg-gray-50 p-4 rounded">
+                    {data.bio}
+                </p>
+            </div>
+        </div>
+    )
 }
