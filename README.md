@@ -13,11 +13,15 @@ This technical assessment for the Athenate team. The assignment involved buildin
 
 *This app runs locally using Turso. No public deployment included.*
 
-## **Project Management**
 
-* **Repo:** [GitHub Repository](https://github.com/Younique98/athenate-tech-challenge)
-* **Issues Board:** [GitHub Issues](https://github.com/Younique98/athenate-tech-challenge/issues)
-* **Milestones:** [GitHub Milestones](https://github.com/Younique98/athenate-tech-challenge/milestones)
+## **Project Management & Resources**
+
+- **FIGMA:** [Uizard Design Overview](https://app.uizard.io/p/12fec916/overview)
+- **Repo:** [GitHub Repository](https://github.com/Younique98/athenate-tech-challenge)
+- **Issues:** [GitHub Issues](https://github.com/Younique98/athenate-tech-challenge/issues)
+- **Project Board:** [GitHub Project Board](https://github.com/users/Younique98/projects/11)
+- **Milestones:** [GitHub Milestones](https://github.com/Younique98/athenate-tech-challenge/milestones)
+
 
 ## **Tech Stack**
 
@@ -123,3 +127,20 @@ Architectural decisions, AI usage, and technical breakdowns are reflected in:
 * **Time Taken:** \~90 minutes (with prep)
 * **Recording:** \[Unlisted YouTube Link — Submitted via email]
 * **Code:** [GitHub Repository](https://github.com/Younique98/athenate-tech-challenge)
+
+
+## **Design Reference**
+
+These mockups were created to visually align with the requirements of the Athenate technical challenge. They reflect the final intended layout and UX for both the view and edit routes.
+
+### `/` — View Profile Page
+
+![View Profile](./public/Profile_View.png)
+
+---
+
+### `/edit` — Edit Profile Page
+
+![Edit Profile](./public/Edit_Profile_Page.png)
+
+ [View in Uizard](https://app.uizard.io/p/12fec916/overview)
