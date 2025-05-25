@@ -14,8 +14,8 @@
 --   'Full-Stack Developer and Mentor',
 --   'I love creating beautiful, accessible interfaces, mentoring junior developers, and building tools that help people thrive.'
 -- );
-UPDATE profile
-SET image_url = "https://picsum.photos/200/300"
-WHERE id = 1;
+-- UPDATE profile
+-- SET image_url = "https://picsum.photos/200/300"
+-- WHERE id = 1;
 SELECT *
 FROM profile;
