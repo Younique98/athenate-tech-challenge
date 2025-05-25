@@ -13,11 +13,15 @@
     "db:push": "npx drizzle-kit push"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.0.1",
     "@libsql/client": "^0.15.7",
     "drizzle-orm": "^0.43.1",
     "next": "15.3.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.56.4",
+    "react-hot-toast": "^2.5.2",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
