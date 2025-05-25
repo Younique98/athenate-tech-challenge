@@ -7,17 +7,17 @@ import * as yup from 'yup'
 import { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 
-type FormData = yup.InferType<typeof profileSchema>
+type TFormData = yup.InferType<typeof profileSchema>
 
 export const Edit = () => {
-    const [defaultValues, setDefaultValues] = useState<FormData | null>(null)
+    const [defaultValues, setDefaultValues] = useState<TFormData | null>(null)
 
     const {
         register,
         handleSubmit,
         reset,
         formState: { errors },
-    } = useForm<FormData>({
+    } = useForm<TFormData>({
         resolver: yupResolver(profileSchema),
         defaultValues: defaultValues || {},
     })
@@ -31,7 +31,7 @@ export const Edit = () => {
             })
     }, [reset])
 
-    const onSubmit = async (data: FormData) => {
+    const onSubmit = async (data: TFormData) => {
         const res = await fetch('/api/profile', {
             method: 'POST',
             body: JSON.stringify(data),
@@ -57,12 +57,12 @@ export const Edit = () => {
                             {field}
                         </label>
                         <input
-                            {...register(field as keyof FormData)}
+                            {...register(field as keyof TFormData)}
                             className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
-                        {errors[field as keyof FormData] && (
+                        {errors[field as keyof TFormData] && (
                             <p className="text-red-500 text-sm mt-1">
-                                {errors[field as keyof FormData]?.message}
+                                {errors[field as keyof TFormData]?.message}
                             </p>
                         )}
                     </div>
