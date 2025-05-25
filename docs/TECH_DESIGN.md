@@ -65,20 +65,6 @@ Defined in:
 
 ---
 
-## AI Use: Ask Mode
-
-I used AI intentionally in **Ask Mode** to:
-
-- Scaffold Tailwind layout patterns
-- Validate form structure and schema alignment
-- Quickly review Drizzle syntax and best practices
-- Generate Toast feedback logic
-- Get unstuck on a SQLite connection error (wrong SSL version)
-
-AI never replaced my decisions. I used it to move faster, stay unblocked, and remain focused. All implementation decisions, flow, and structure were designed by me.
-
----
-
 ## Tradeoffs & Considerations
 
 - **Chose Turso** for fast local setup and SQLite durability
