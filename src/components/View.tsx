@@ -1,3 +1,4 @@
+import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
@@ -12,6 +13,7 @@ interface IProfile {
 
 export const View = () => {
     const [data, setData] = useState<IProfile | null>(null)
+    const router = useRouter()
 
     useEffect(() => {
         fetch('/api/profile')
@@ -41,6 +43,14 @@ export const View = () => {
                     {data.bio}
                 </p>
             </div>
+            <button
+                type="button"
+                className="rounded-md mt-2 bg-indigo-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                onClick={() => router.push('/edit')}
+            >
+                {' '}
+                Edit Your Profile
+            </button>
         </div>
     )
 }
